@@ -27,7 +27,7 @@
                     <a href="#categoriasSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Categorias</a>
                     <ul class="collapse list-unstyled" id="categoriasSubmenu">
                         <li>
-                            <a href="/categorias/nova">Nova</a>
+                            <a href="/categoria/cadastro">Nova</a>
                         </li>
                         <li>
                             <a href="/categorias/">Listar</a>

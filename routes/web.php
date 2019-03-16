@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicial');
 });
+Route::get('/categorias', "CategoriaController@index");
+//Route::get('/categoria/editar', "CategoriaController@edit");
+Route::get('/categoria/cadastro', "CategoriaController@create");
+Route::post('/categoria', "CategoriaController@store");
