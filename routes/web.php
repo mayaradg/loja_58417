@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('inicial');
 });
-Route::get('/categorias', "CategoriaController@index");
-//Route::get('/categoria/editar', "CategoriaController@edit");
+/*Route::get('/categorias', "CategoriaController@index");
+Route::get('/categoria/editar/{id}', "CategoriaController@edit");
 Route::get('/categoria/cadastro', "CategoriaController@create");
-Route::post('/categoria', "CategoriaController@store");
+Route::post('/categoria', "CategoriaController@store");*/
+
+Route::resource('categorias', 'CategoriaController');
+Route::resource('produtos', 'ProdutoController');

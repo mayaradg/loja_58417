@@ -1,7 +1,7 @@
 @extends('layout.base', ["current"=>"categorias"])
 
 @section('body')
-    <form action = "/categoria" method = "POST">
+    <form action = "{{route('categorias.store')}}" method = "POST">
         @csrf
         <div class = "form-group">
             <h1>Cadastro de Categoria</h1>

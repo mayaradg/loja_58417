@@ -27,10 +27,10 @@
                     <a href="#categoriasSubmenu"  data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Categorias</a>
                     <ul class="collapse list-unstyled" id="categoriasSubmenu">
                         <li>
-                            <a href="/categoria/cadastro">Nova</a>
+                            <a href="{{route('categorias.create')}}">Nova</a>
                         </li>
                         <li>
-                            <a href="/categorias/">Listar</a>
+                            <a href="{{route('categorias.index')}}">Listar</a>
                         </li>
                         <li>
                             <a href="/categorias/restaurar">Restaurar</a>
@@ -41,10 +41,10 @@
                     <a href="#produtosSubmenu" data-toggle="collapse" aria-expanded="true" class="dropdown-toggle">Produtos</a>
                     <ul class="collapse list-unstyled" id="produtosSubmenu">
                         <li>
-                            <a href="/produtos/novo">Novo</a>
+                            <a href="{{route('produtos.create')}}">Novo</a>
                         </li>
                         <li>
-                            <a href="/produtos/">Listar</a>
+                            <a href="{{route('produtos.index')}}">Listar</a>
                         </li>
                     </ul>
                 </li>

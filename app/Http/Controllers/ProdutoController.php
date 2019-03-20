@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Produto;
 use App\Categoria;
 use Illuminate\Http\Request;
 
-class CategoriaController extends Controller
+class ProdutoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categorias = Categoria::all();
-        return view('categorias_listar', compact('categorias'));
+        $produtos = Produto::all();
+        return view('produtos_listar', compact('produtos'));
     }
 
     /**
@@ -25,7 +26,8 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        return view('categoria_cadastrar');
+        $categorias = Categoria::all();
+        return view('produto_cadastrar', compact('categorias'));
     }
 
     /**
@@ -36,19 +38,16 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        $categoria = new Categoria();
-        $categoria->nome = $request->input("nome");
-        $categoria->save();
-        return redirect()->route('categorias.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function show(Categoria $categoria)
+    public function show(Produto $produto)
     {
         //
     }
@@ -56,37 +55,34 @@ class CategoriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Categoria $categoria)
+    public function edit(Produto $produto)
     {
-        return view('categoria_editar', compact('categoria'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, Produto $produto)
     {
-        $categoria->nome = $request->input("nome");
-        $categoria->save();
-        return redirect()->route('categorias.index');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Categoria  $categoria
+     * @param  \App\Produto  $produto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy(Produto $produto)
     {
-        $categoria->delete();
-        return redirect("/categorias");
+        //
     }
 }
