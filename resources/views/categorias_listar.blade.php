@@ -15,10 +15,12 @@
             <td>{{$cat->id}}</td>
             <td>{{$cat->nome}}</td>
             <td>
-              <form>
-                <a class = "btn btn-success">Editar</a>
-                <a class = "btn btn-danger">Excluir</a>
-              </form>  
+            <form action = "{{route('categorias.destroy', $cat)}}" method = "POST">
+                @csrf
+                <a class = "btn btn-success" href="{{route('categorias.edit', $cat)}}">Editar</a>
+                @method('DELETE')
+                <button type = "submit" class = "btn btn-danger">Excluir</button>
+            </form>  
             </td>
         </tr>
     @endforeach
