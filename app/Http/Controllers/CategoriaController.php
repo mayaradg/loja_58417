@@ -7,6 +7,22 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
+    public function forceDelete($id){
+        $categoria = Categoria::onlyTrashed()->find($id);
+        $categoria->forceDelete();
+        return redirect()->route('categorias.restaurar');
+    }
+
+    public function restore($id){
+        $categoria = Categoria::onlyTrashed()->find($id);
+        $categoria->restore();
+        return redirect()->route('categorias.index');
+    }
+
+    public function indexTrashed(){
+        $categorias = Categoria::onlyTrashed()->get();
+        return view('categoria_restaurar', compact('categorias'));
+    }
     /**
      * Display a listing of the resource.
      *

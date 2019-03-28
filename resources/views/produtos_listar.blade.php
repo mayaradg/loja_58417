@@ -20,7 +20,7 @@
             <td>{{$prod->nome}}</td>
             <td>{{$prod->descricao}}</td>
             <td>{{$prod->preco}}</td>
-            <td>{{$prod->categoria_id}}</td>
+            <td>{{$prod->categoria["nome"]}}</td>
             <td>{{$prod->foto}}</td>
             <td>
               <form>
