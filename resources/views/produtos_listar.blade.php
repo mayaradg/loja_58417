@@ -21,7 +21,7 @@
             <td>{{$prod->descricao}}</td>
             <td>{{$prod->preco}}</td>
             <td>{{$prod->categoria["nome"]}}</td>
-            <td>{{$prod->foto}}</td>
+            <td><img src="../storage/{{$prod->foto}}"/></td>
             <td>
               <form>
                 <a class = "btn btn-success">Editar</a>

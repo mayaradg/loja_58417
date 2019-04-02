@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Produto;
 use App\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProdutoController extends Controller
 {
@@ -43,7 +45,9 @@ class ProdutoController extends Controller
         $produto->descricao = $request->input("descricao");
         $produto->preco = $request->input("preco");
         $produto->categoria_id = $request->input("categoria");
-        $produto->foto = $request->input("foto");
+        $path = $request->file("foto")->store('images', 'public');
+        $produto->foto = $path;
+        //$produto->foto = $request->input("foto");
         $produto->save();
         return redirect()->route('produtos.index');
     }
